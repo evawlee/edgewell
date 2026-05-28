@@ -154,9 +154,9 @@ def test_upload_handler_accepts_firmware(tmp_path):
     assert rec.uploaded_by == "alice"
 
 
-def test_upload_handler_accepts_branch_bundle(tmp_path):
+def test_upload_handler_accepts_config(tmp_path):
     u = UploadHandler(str(tmp_path))
-    rec = u.submit("branch.tar", b"abcdef", "noc", kind="branch_bundle")
+    rec = u.submit("running.cfg", b"abcdef", "noc", kind="config")
     assert rec.accepted is True
 
 
